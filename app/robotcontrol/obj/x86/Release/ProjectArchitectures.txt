@@ -1,0 +1,4 @@
+C:\Users\pli3\Desktop\VR\HoloSurgery\app\robotcontrol\robotcontrol.csproj;x86
+C:\Users\pli3\Desktop\VR\HoloSurgery\UWP\Assembly-CSharp\Assembly-CSharp.csproj;x86
+C:\Users\pli3\Desktop\VR\HoloSurgery\UWP\Assembly-CSharp-firstpass\Assembly-CSharp-firstpass.csproj;x86
+C:\Users\pli3\Desktop\VR\HoloSurgery\UWP\Assembly-CSharp-firstpass\Assembly-CSharp-firstpass.csproj;x86
