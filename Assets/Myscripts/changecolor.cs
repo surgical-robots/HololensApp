@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+//using keyboard to control colors, this is just for editor
 public class changecolor : MonoBehaviour
 {
 

@@ -21,17 +21,17 @@ public class AstronautManager : Singleton<AstronautManager>
     {
         keywordCollection = new Dictionary<string, KeywordAction>();
 
-        // Add keyword to start manipulation.
+        // Add keyword to start manipulation. 
         keywordCollection.Add("Move", MoveAstronautCommand);
-
+        //select current object
         keywordCollection.Add("Video", VideoCommand);
         keywordCollection.Add("Body", BodyCommand);
         keywordCollection.Add("Robot", RobotCommand);
-
+        // size control
         keywordCollection.Add("Bigger", MagnifyModelCommand);
         keywordCollection.Add("Smaller", ShrinkModelCommand);
 
-
+        //visability
         keywordCollection.Add("Hide", HideModelCommand);
         keywordCollection.Add("Show", ShowModelCommand);
 
@@ -42,7 +42,6 @@ public class AstronautManager : Singleton<AstronautManager>
 
         // 5.a: Add keyword Reset Model to call the ResetModelCommand function.
         keywordCollection.Add("Reset", ResetModelCommand);
-
 
 
         // Initialize KeywordRecognizer with the previously added keywords.
@@ -117,6 +116,7 @@ public class AstronautManager : Singleton<AstronautManager>
 
         ExpandModel.Instance.Expand();
     }
+    //bigger
     private void MagnifyModelCommand(PhraseRecognizedEventArgs args)
     {
         GameObject newG = GameObject.Find("Managers");
@@ -129,6 +129,7 @@ public class AstronautManager : Singleton<AstronautManager>
         if (cm == 2)
             newMa.biggerR = 0.0002F;//for robot
     }
+    //smaller
     private void ShrinkModelCommand(PhraseRecognizedEventArgs args)
     {
         GameObject newG = GameObject.Find("Managers");
@@ -142,7 +143,7 @@ public class AstronautManager : Singleton<AstronautManager>
             newMa.biggerR = -0.0002F;//for robot
     }
     
-
+    //hide
 
     private void HideModelCommand(PhraseRecognizedEventArgs args)
     {
@@ -153,6 +154,7 @@ public class AstronautManager : Singleton<AstronautManager>
             newMa.hide = true;
        
     }
+    //show
     private void ShowModelCommand(PhraseRecognizedEventArgs args)
     {
         GameObject newG = GameObject.Find("Managers");
@@ -162,6 +164,8 @@ public class AstronautManager : Singleton<AstronautManager>
         newMa.hide = false; 
 
     }
+
+    //update current gameobject
     private void VideoCommand(PhraseRecognizedEventArgs args)
     {
         GameObject newG = GameObject.Find("Managers");
@@ -180,6 +184,7 @@ public class AstronautManager : Singleton<AstronautManager>
         ManifyModel newMa = newG.GetComponent<ManifyModel>();
         newMa.currentModel = 2;
     }
+
     public void Update()
     {
         if (isModelExpanding && Time.realtimeSinceStartup >= expandAnimationCompletionTime)

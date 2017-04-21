@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+//play local video
 [RequireComponent (typeof(AudioSource))]
 public class video : MonoBehaviour {
     // Use this for initialization

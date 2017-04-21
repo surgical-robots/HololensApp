@@ -16,6 +16,7 @@ using Windows.Networking.Connectivity;
 using Windows.Networking;
 using Windows.Storage.Streams;
 #endif
+//virtual robot control parameters
 [System.Serializable]
 public class VirtualRobotPosition
 {
@@ -41,15 +42,15 @@ public class rotate2 : MonoBehaviour
     VirtualRobotPosition pos = new VirtualRobotPosition();
     async void Start()
     {
+        // creat a datagram socket and try to connect the server.
         socket = new DatagramSocket();
         socket.MessageReceived += Socket_MessageReceived;
-
-
-        try
+            try
         {
             await socket.ConnectAsync(new Windows.Networking.HostName("129.93.15.115"), "1236");
+            // the ip address is the server ip, can be get by google "my ip address"
             DataWriter writer = new DataWriter(socket.OutputStream);
-            writer.WriteString("Hello world");
+            writer.WriteString("Hello server");
             await writer.StoreAsync();
             message = "";
         }
@@ -59,7 +60,7 @@ public class rotate2 : MonoBehaviour
         }
 
     }
-
+    //update the message and use the message to control the robot
     void Update()
     {
         GameObject newG = GameObject.Find("MyText");
@@ -69,6 +70,7 @@ public class rotate2 : MonoBehaviour
         updateRobot();
     }
 
+    //function to get the response from the server
     private async void Socket_MessageReceived(Windows.Networking.Sockets.DatagramSocket sender,
         Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs args)
     {
@@ -81,7 +83,7 @@ public class rotate2 : MonoBehaviour
 
 
 
-
+    //updat the robot
     public void updateRobot()
     {
         GameObject newG1 = GameObject.Find("robot");

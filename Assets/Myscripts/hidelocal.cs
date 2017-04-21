@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//this is also for editor version, just to control show and hide of attached game object.
 public class hidelocal : MonoBehaviour {
 
 	// Use this for initialization

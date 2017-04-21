@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//function to play online video
 [RequireComponent(typeof(AudioSource))]
 
 public class online: MonoBehaviour

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//response function for control size, visiability and rotation of game object.
 public class ManifyModel : MonoBehaviour
 {
     public float biggerV, biggerR, biggerB;//did not use array is stupid, but it has index problem

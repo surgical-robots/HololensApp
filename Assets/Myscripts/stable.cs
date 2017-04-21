@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+//make the hologram more stable
 public class stable : MonoBehaviour {
 
 	// Use this for initialization
